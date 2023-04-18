@@ -76,7 +76,7 @@ export default {
         salario: this.salario,
         modalidade: this.modalidade,
         tipo: this.tipo,
-        publicacao: dataAtual.toISOString().substr(0, 10)
+        publicacao: dataAtual.toISOString()
       })
       localStorage.setItem('vagas', JSON.stringify(vagas))
     }

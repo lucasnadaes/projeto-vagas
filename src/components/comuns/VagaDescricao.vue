@@ -2,7 +2,7 @@
   <div class="card">
           <div class="card-header bg-dark text-white">{{titulo}}</div>
           <div class="card-body"><p>{{descricao}}</p></div>
-          <div class="card-footer"><small class="text-muted">Salário: R$ {{salario}} | Modalidade: {{getModalidade}} | Tipo: {{getTipo}} | Publicação: {{publicacao}}</small></div>
+          <div class="card-footer"><small class="text-muted">Salário: R$ {{salario}} | Modalidade: {{getModalidade}} | Tipo: {{getTipo}} | Publicação: {{getPublicacao}}</small></div>
         </div>
 </template>
 
@@ -53,6 +53,10 @@ export default {
         case '2': return 'PJ'
       }
       return ''
+    },
+    getPublicacao() {
+      let dataPublicacao = new Date(this.publicacao)
+      return dataPublicacao.toLocaleDateString('pt-BR')
     }
   }
   //props: ['titulo', 'descricao', 'salario', 'modalidade', 'tipo', 'publicacao']
