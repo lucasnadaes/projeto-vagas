@@ -27,6 +27,15 @@ export default {
   data: () => ({
     favoritada: false
   }),
+  watch: {
+    favoritada(valorNovo) {
+      if(valorNovo) {
+        this.emitter.emit('favoritarVaga', this.titulo)
+      } else {
+        this.emitter.emit('desfavoritarVaga', this. titulo)
+      }
+    }
+  },
   props: {
     titulo: {
       type: String,
